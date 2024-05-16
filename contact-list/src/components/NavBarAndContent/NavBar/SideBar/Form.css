@@ -27,10 +27,10 @@
     height: 35px;
     padding: 10px;
     margin: 5px;
-    border-radius: 3px;
+    border-radius: 12px;
     border: none;
     outline: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.7rem;
     letter-spacing: 0.5px;
 }

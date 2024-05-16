@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -19,16 +19,16 @@ p,
 h2 {
     font-size: 0.7rem;
     font-weight: 400;
-    color: #f7f7f7;
+    color: #ffe0b0;
 }
 
 p {
-    color: #d7dcdf;
+    color: #fdaefd;
 }
 
 .contact-list-app {
     width: 750px;
     margin: 0% auto;
-    border-radius: 3px;
-    background-color: #f7f7f7;
+    border-radius: 4px;
+    background-color: #ffe0b0;
 }
