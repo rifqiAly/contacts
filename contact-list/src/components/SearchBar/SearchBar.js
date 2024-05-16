@@ -8,10 +8,10 @@ const SearchBar = () => {
         <div className='profile-img-box'>
         <i class="fa-solid fa-user"></i>
         </div>
-        <h2>Nama Orang</h2>
+        <h2>Contact List</h2>
       </div>
       <form className='search-box'>
-        <input type='text' placeholder='namanya'/>
+        <input type='text' placeholder='Who are you looking for?'/>
         <Button name='Search' />
       </form>
     </div>
