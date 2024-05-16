@@ -35,7 +35,17 @@
     letter-spacing: 0.5px;
 }
 
-.input-tel input[type=text]{
-    width: 190px;
+.input-url input[type=text]{
+    width: 130px;
     margin-bottom: 10px;
+}
+
+.input-age input[type=text]{
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 }

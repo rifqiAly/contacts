@@ -1,10 +1,25 @@
-.contact-list{
+.contact-list {
     height: 100%;
     width: 100%;
     margin: 8px;
     border-radius: 4px;
     background-color: #fff;
     border: 1px solid #d7dcdf;
+}
+
+table thead tr {
+    display: block;
+}
+
+table th,
+table td {
+    width: 400px;
+}
+
+table tbody {
+    display: block;
+    height: 45vh;
+    overflow: auto
 }
 
 .contact-list p,
@@ -14,7 +29,7 @@
 }
 
 .contact-list .fa-solid {
-    margin-right: 16px;
+    margin-right: 8px;
 }
 
 .contact-list table {
@@ -24,12 +39,12 @@
 }
 
 .contact-list th,
-.contact-list td{
-    padding: 12px;
+.contact-list td {
+    padding: 16px;
     border-bottom: 1px solid #ddd;
 }
 
 .contact-list .profile-img-box {
     margin-right: 0px;
-    margin-left: 12px;
+    margin-left: 32px;
 }
