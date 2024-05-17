@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Form.css'
 import Lottie from 'react-lottie';
 import animationData from '../../../../assets/animation.json'
 import Button from '../../../UI/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { contactListActions } from '../../../../store/contact-slice';
-
+import master from '../../../../helper/master'
 const Form = () => {
     const dispatch = useDispatch()
+    const { mode, modify } = useSelector((state) => state.contact)
 
     const [userData, setUserData] = useState({
         firstName: '',
         lastName: '',
-        age: '',    
+        age: '',
         photo: ''
     })
 
@@ -25,9 +26,21 @@ const Form = () => {
         }
     };
 
+    const getData = async () => {
+        const resp = await master.GetAllContact()
+        if (resp.status === 200) {
+            dispatch(contactListActions.setData(resp.data.data))
+        }
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(contactListActions.addContact(userData))
+        if (mode === 'Add') {
+            dispatch(contactListActions.addContact(userData))
+        } else if (mode === 'Edit') {
+            dispatch(contactListActions.editContact(userData))
+            getData()
+        }
 
         setUserData({
             firstName: '',
@@ -46,6 +59,24 @@ const Form = () => {
             }
         })
     }
+
+    useEffect(() => {
+        if (mode === 'Edit') {
+            const getSingleContact = async (id) => {
+                const resp = await master.GetContactId(id)
+                if (resp.status === 200) {
+                    let toPopulate = resp.data.data
+                    setUserData({
+                        firstName: toPopulate.firstName,
+                        lastName: toPopulate.lastName,
+                        age: toPopulate.age,
+                        photo: toPopulate.photo
+                    })
+                }
+            }
+            getSingleContact(modify)
+        }
+    }, [modify, mode])
 
     return (
         <form className='form' onSubmit={handleSubmit}>
@@ -90,7 +121,7 @@ const Form = () => {
                         onChange={handleInput} />
                 </div>
             </div>
-            <Button name='Add' />
+            <Button name='Save' />
         </form>
     )
 }

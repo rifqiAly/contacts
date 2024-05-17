@@ -1,6 +1,5 @@
 import React from 'react'
-
-const ContentCards = ({ data }) => {
+const ContentCards = ({data, handleDelete, handleEdit}) => {
     return (
         <tbody>
             {data.map((e) => (
@@ -14,13 +13,18 @@ const ContentCards = ({ data }) => {
                     <td><h2>{e.age}</h2></td>
                     <td>
                         <div>
-                            <i className='fa-solid fa-pen'></i>
-                            <i className='fa-solid fa-trash'></i>
-                            <i className='fa-solid fa-heart'></i>
+                            <i className='fa-solid fa-pen' onClick={() => {
+                                handleEdit(e.id)
+                            }}></i>
+                            <i className='fa-solid fa-trash' onClick={() => {
+                                handleDelete(e.id)
+                            }}></i>
+                            {/* <i className='fa-solid fa-heart'></i> */}
                         </div>
                     </td>
                 </tr>
-            ))}
+            ))
+            }
 
         </tbody>
     )

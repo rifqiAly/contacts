@@ -1,8 +1,8 @@
 import React from 'react'
 import './Button.css'
-const Button = (props) => {
+const Button = ({name}) => {
   return (
-    <button type='submit'>{props.name}</button>
+    <button type='submit'>{name}</button>
   )
 }
 

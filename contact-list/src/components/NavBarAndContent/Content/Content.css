@@ -13,7 +13,7 @@ table thead tr {
 
 table th,
 table td {
-    width: 400px;
+    width: 150px;
 }
 
 table tbody {
@@ -29,7 +29,7 @@ table tbody {
 }
 
 .contact-list .fa-solid {
-    margin-right: 8px;
+    margin-left: 24px;
 }
 
 .contact-list table {
